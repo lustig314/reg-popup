@@ -380,21 +380,6 @@ img {
   height: auto;
 }
 
-.visually-hidden:not(:focus):not(:active),
-input[type=checkbox].visually-hidden,
-input[type=radio].visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .btn {
   width: 100%;
   background: #CBC9D6;
@@ -442,7 +427,7 @@ input[type=radio].visually-hidden {
 
 .reg-form {
   width: 550px;
-  height: 1000px;
+  min-height: 1000px;
   background-color: #fff;
   position: absolute;
   left: 50%;
@@ -473,6 +458,43 @@ input[type=radio].visually-hidden {
   color: #000000;
   margin-bottom: 22px;
 }
+.reg-form .error-message {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #BB1225;
+  padding-top: 5px;
+  position: absolute;
+  display: none;
+}
+.reg-form__input-wrapper {
+  position: relative;
+}
+.reg-form__input-wrapper:not(:first-child) {
+  margin-top: 20px;
+}
+.reg-form__input-wrapper.invalid {
+  margin-bottom: 65px;
+}
+.reg-form__input-wrapper.invalid input {
+  background: #FEF2F2;
+}
+.reg-form__input-wrapper.invalid input:focus {
+  background: #FEF2F2;
+  outline: 1px solid #BB1225;
+}
+.reg-form__input-wrapper.invalid .error-message {
+  display: block;
+}
+.reg-form__input-wrapper .explanation-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 23px;
+  height: 23px;
+}
 .reg-form__input {
   background: #F2F1F7;
   border: none;
@@ -493,32 +515,6 @@ input[type=radio].visually-hidden {
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
-}
-.reg-form__input_invalid {
-  background: #FEF2F2;
-  outline: 1px solid #BB1225;
-}
-.reg-form__input_invalid:focus {
-  background: #FEF2F2;
-  outline: 1px solid #BB1225;
-}
-.reg-form__input_invalid .error-message {
-  display: block;
-}
-.reg-form__input-wrapper {
-  position: relative;
-}
-.reg-form__input-wrapper:not(:first-child) {
-  margin-top: 20px;
-}
-.reg-form__input-wrapper .explanation-btn {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  width: 23px;
-  height: 23px;
 }
 .reg-form__label {
   position: absolute;
@@ -559,17 +555,6 @@ input[type=radio].visually-hidden {
 .reg-form__explanation_active {
   opacity: 1;
   visibility: visible;
-}
-.reg-form .error-message {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #BB1225;
-  padding-top: 5px;
-  display: none;
-}
-.reg-form .error-message_visible {
-  display: block;
 }
 .reg-form .patronymic-input:disabled {
   background-color: rgba(0, 0, 0, 0.25);
@@ -631,6 +616,29 @@ input[type=radio].visually-hidden {
 }
 .reg-form__authorization a {
   color: #2F65F6;
+}
+
+@media (max-width: 1160px) {
+  .reg-form__explanation {
+    right: -25px;
+  }
+}
+@media (max-width: 550px) {
+  .reg-form {
+    max-width: 420px;
+  }
+}
+@media (max-width: 430px) {
+  .reg-form {
+    max-width: 340px;
+    padding: 30px 15px;
+  }
+  .reg-form__explanation {
+    right: 0;
+  }
+  .reg-form__input[name=phone] + label {
+    font-size: 17px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

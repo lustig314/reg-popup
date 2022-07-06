@@ -16,8 +16,9 @@
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   visibility: hidden;
+
   &_active {
     visibility: visible;
   }
@@ -35,7 +36,7 @@
 
 .reg-form {
   width: 550px;
-  height: 1000px;
+  min-height: 1000px;
   background-color: #fff;
   position: absolute;
   left: 50%;
@@ -70,6 +71,52 @@
     margin-bottom: 22px;
   }
 
+  .error-message {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #BB1225;
+    padding-top: 5px;
+    position: absolute;
+    display: none;
+  }
+
+
+  &__input-wrapper {
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    &.invalid {
+      margin-bottom: 65px;
+
+      input {
+        background: #FEF2F2;
+
+        &:focus {
+          background: #FEF2F2;
+          outline: 1px solid #BB1225;
+        }
+      }
+      .error-message {
+        display: block;
+      }
+    }
+
+    .explanation-btn {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      width: 23px;
+      height: 23px;
+    }
+  }
+
+
   &__input {
     background: #F2F1F7;
     border: none;
@@ -91,35 +138,6 @@
       font-weight: 400;
       font-size: 15px;
       line-height: 18px;
-    }
-    &_invalid {
-      background: #FEF2F2;
-      outline: 1px solid #BB1225;
-      &:focus {
-        background: #FEF2F2;
-        outline: 1px solid #BB1225;
-      }
-    }
-    &_invalid .error-message {
-      display: block;
-    }
-  }
-
-  &__input-wrapper {
-    position: relative;
-
-    &:not(:first-child) {
-      margin-top: 20px;
-    }
-
-    .explanation-btn {
-      position: absolute;
-      top: 50%;
-      right: 15px;
-      transform: translateY(-50%);
-      cursor: pointer;
-      width: 23px;
-      height: 23px;
     }
   }
 
@@ -168,17 +186,6 @@
     visibility: visible;
   }
 
-  .error-message {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #BB1225;
-    padding-top: 5px;
-    display: none;
-    &_visible {
-      display: block;
-    }
-  }
 
   .patronymic-input:disabled {
     background-color: rgba(0, 0, 0, 0.25);
@@ -223,6 +230,7 @@
     justify-content: center;
     position: relative;
     margin-bottom: 20px;
+
     .explanation-btn {
       margin-left: 10px;
       cursor: pointer;
@@ -236,6 +244,7 @@
     margin-bottom: 35px;
     background-color: #9D9BA8;
   }
+
   &__authorization {
     text-align: center;
     margin: 0 auto;
@@ -244,8 +253,34 @@
     font-size: 18px;
     line-height: 29px;
     color: #817D8C;
+
     a {
       color: #2F65F6;
     }
+  }
+}
+
+@media (max-width: 1160px) {
+  .reg-form__explanation {
+    right: -25px;
+  }
+}
+
+@media (max-width: 550px) {
+  .reg-form {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 430px) {
+  .reg-form {
+    max-width: 340px;
+    padding: 30px 15px;
+  }
+  .reg-form__explanation {
+    right: 0;
+  }
+  .reg-form__input[name="phone"] + label {
+    font-size: 17px;
   }
 }
