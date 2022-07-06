@@ -464,8 +464,8 @@ img {
   line-height: 19px;
   color: #BB1225;
   padding-top: 5px;
-  position: absolute;
   display: none;
+  margin-bottom: 20px;
 }
 .reg-form__input-wrapper {
   position: relative;
@@ -473,18 +473,12 @@ img {
 .reg-form__input-wrapper:not(:first-child) {
   margin-top: 20px;
 }
-.reg-form__input-wrapper.invalid {
-  margin-bottom: 65px;
-}
 .reg-form__input-wrapper.invalid input {
   background: #FEF2F2;
 }
 .reg-form__input-wrapper.invalid input:focus {
   background: #FEF2F2;
   outline: 1px solid #BB1225;
-}
-.reg-form__input-wrapper.invalid .error-message {
-  display: block;
 }
 .reg-form__input-wrapper .explanation-btn {
   position: absolute;
@@ -494,6 +488,9 @@ img {
   cursor: pointer;
   width: 23px;
   height: 23px;
+}
+.reg-form__input-wrapper.invalid + .error-message {
+  display: block;
 }
 .reg-form__input {
   background: #F2F1F7;
