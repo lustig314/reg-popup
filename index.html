@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<title>Registration Popup</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport"/>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+<main class="main">
+	<div class="modal-overlay"></div>
+	<div class="btn-wrapper">
+		<button class="btn reg-btn">Зарегестрироваться</button>
+	</div>
+	<form class="reg-form" method="post" action="">
+		<h1>Регистрация</h1>
+		<div class="reg-form__input-wrapper">
+			<input class="reg-form__input" type="text" name="lastname" required>
+			<label class="reg-form__label">Фамилия</label>
+			<img class="explanation-btn" src="images/question-icon.png"
+					 alt="explanation" data-path="lastname">
+			<div class="reg-form__explanation" data-target="lastname">
+				<p>Поясняющий текст во всплывающем окне к инпуту длиной в две-три
+					строки</p>
+			</div>
+		</div>
+		<p class="error-message">Поле заполено некорректно</p>
+		<div class="reg-form__input-wrapper">
+			<input class="reg-form__input" type="text" name="name" required
+			>
+			<label class="reg-form__label">Имя</label>
+			<img class="explanation-btn" src="images/question-icon.png"
+					 alt="explanation" data-path="name">
+			<div class="reg-form__explanation" data-target="name">
+				<p>Поясняющий текст во всплывающем окне к инпуту длиной в две-три
+					строки</p>
+			</div>
+		</div>
+		<p class="error-message">Поле заполено некорректно</p>
+		<div class="reg-form__input-wrapper">
+			<input class="reg-form__input patronymic-input" type="text"
+						 name="patronymic" required
+			>
+			<label class="reg-form__label">Отчество</label>
+			<img class="explanation-btn" src="images/question-icon.png"
+					 alt="explanation" data-path="patronymic">
+			<div class="reg-form__explanation" data-target="patronymic">
+				<p>Поясняющий текст во всплывающем окне к инпуту длиной в две-три
+					строки</p>
+			</div>
+		</div>
+		<p class="error-message">Поле заполено некорректно</p>
+		<div class="reg-form__check-input">
+			<input type="checkbox" id="check-patronymic" name="check-patronymic"
+			>
+			<label for="check-patronymic">отсутствует</label>
+		</div>
+		<div class="reg-form__input-wrapper">
+			<input class="reg-form__input" type="tel" id="phone" name="phone"
+
+						 required>
+			<label class="reg-form__label">Номер мобильного телефона</label>
+			<img class="explanation-btn" src="images/question-icon.png"
+					 alt="explanation" data-path="phone">
+			<div class="reg-form__explanation" data-target="phone">
+				<p>Поясняющий текст во всплывающем окне к инпуту длиной в две-три
+					строки</p>
+			</div>
+		</div>
+		<p class="error-message">Поле заполено некорректно</p>
+		<div class="reg-form__input-wrapper">
+			<input class="reg-form__input" type="text" name="website" required
+			>
+			<label class="reg-form__label">info@site.com</label>
+			<img class="explanation-btn" src="images/question-icon.png"
+					 alt="explanation" data-path="website">
+			<div class="reg-form__explanation" data-target="website">
+				<p>Поясняющий текст во всплывающем окне к инпуту длиной в две-три
+					строки</p>
+			</div>
+		</div>
+		<p class="error-message">Поле заполено некорректно</p>
+		<div class="reg-form__input-wrapper">
+			<input class="reg-form__input" type="text" name="birthday" required
+			>
+			<label class="reg-form__label">Дата рождения</label>
+			<img class="explanation-btn" src="images/question-icon.png"
+					 alt="explanation" data-path="birthday">
+			<div class="reg-form__explanation" data-target="birthday">
+				<p>Поясняющий текст во всплывающем окне к инпуту длиной в две-три
+					строки</p>
+			</div>
+		</div>
+		<p class="error-message">Поле заполено некорректно</p>
+		<p class="reg-form__rules">Завершая регистрацию нажатием на кнопку
+			«Регистрация» я подтверждаю согласие с
+			<a href="#">политикой обработки персональных данных</a> и <a href="#">правилами
+				сайта</a></p>
+		<div class="reg-form__check-input password-input">
+			<input type="checkbox" id="check-password" name="check-password"
+			>
+			<label for="check-password">Пароль не нужен</label>
+			<img class="explanation-btn" src="images/question-icon.png"
+					 alt="explanation" data-path="check-password">
+			<div class="reg-form__explanation" data-target="check-password">
+				<p>Поясняющий текст во всплывающем окне к инпуту длиной в две-три
+					строки</p>
+			</div>
+		</div>
+		<button class="btn submit-btn" type="submit">Регистрация</button>
+		<div class="line"></div>
+		<p class="reg-form__authorization">У меня уже есть учетная запись <a
+			href="#">Войти с паролем</a></p>
+	</form>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>
